@@ -7,17 +7,23 @@ console.log("up and running");
 //created array of four cards
 var cards = ["queen", "queen", "king", "king"];
 var cardsInPlay = [];
-var cardOne = cards[0];
-cardsInPlay.push(cardOne);
-console.log("User flipped " + cardsInPlay[0]);
-var cardTwo = cards[2];
-cardsInPlay.push(cardTwo);
-console.log("User flipped " + cardsInPlay[1]);
-//checking the equality between two cards in array to find out match
-if (cardsInPlay.length === 2){
-  if (cardsInPlay[0] === cardsInPlay[1]){
-    alert("You found a match!");
-  } else {
-    alert("Sorry try again.");
-  }
+//created function to check flipped two card matches or not
+var checkForMatch = function(){
+//  if (cardsInPlay.length === 2){
+    if (cardsInPlay[0] === cardsInPlay[1]){
+      alert("You found a match!");
+    } else {
+      alert("Sorry try again.");
+    }
+//  }
 }
+//created function to add flipped card in the new empty array
+var flipCard = function(cardId){
+  console.log("User flipped " + cards[cardId])
+  //checking the equality between two cards in array to find out match
+cardsInPlay.push(cards[cardId]);
+checkForMatch();
+}
+//called the function
+flipCard(0);
+flipCard(2);
